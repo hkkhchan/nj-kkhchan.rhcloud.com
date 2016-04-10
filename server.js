@@ -9,7 +9,13 @@ app.use('/css',express.static(path.join(__dirname + '/css')));
 
 app.get('/',function(req,res){
 	res.setHeader('Content-Type', 'text/html');
-    res.send('index.html');
+    if (req.query != null) {
+		res.send('hi, '+req.query)
+	}
+	else
+	{
+		res.send('hi, ken');
+	}
 });
 server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
 /*
