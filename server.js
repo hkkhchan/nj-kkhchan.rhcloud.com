@@ -1,8 +1,17 @@
 #!/bin/env node
 
+var http = require('http');
 var express = require('express');
 var fs      = require('fs');
-
+var app = express();
+var server = http.createServer(app);
+app.get('/',function(req,res){
+	res.end('test');
+});
+server.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP,function(){
+	console.log('http test');
+});
+/*
 var myApp = function() {
 
     var self = this;
@@ -94,4 +103,4 @@ var myApp = function() {
 var zapp = new myApp();
 zapp.initialize();
 zapp.start();
-
+*/
