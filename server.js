@@ -6,11 +6,11 @@ var fs      = require('fs');
 var app = express();
 var server = http.createServer(app);
 app.get('/',function(req,res){
-	res.end('test');
+	res.setHeader('Content-Type', 'text/html');
+    res.send(self.cache_get('index.html') );
 });
-server.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP,function(){
-	console.log('http test');
-});
+server.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP
+);
 /*
 var myApp = function() {
 
