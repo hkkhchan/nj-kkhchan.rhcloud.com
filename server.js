@@ -1,97 +1,14 @@
 #!/bin/env node
 
 var express = require('express');
-var fs      = require('fs');
 
-var myApp = function() {
+var app = express();
 
-    var self = this;
+// define routes
+app.get('/', function(req, res){
+    res.send('hello! express！ this is a index');
+});
 
-    self.setupVariables = function() {
-        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-
-        if (typeof self.ipaddress === "undefined") {
-            console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
-            self.ipaddress = "127.0.0.1";
-        };
-    };
-
-    self.populateCache = function() {
-        if (typeof self.zcache === "undefined") {
-            self.zcache = { 'index.html': '' };
-        }
-
-        self.zcache['index.html'] = fs.readFileSync('./index.html');
-    };
-
-    self.cache_get = function(key) { return self.zcache[key]; };
-
-    self.terminator = function(sig){
-        if (typeof sig === "string") {
-           console.log('%s: Received %s - terminating sample app ...',
-                       Date(Date.now()), sig);
-           process.exit(1);
-        }
-        console.log('%s: Node server stopped.', Date(Date.now()) );
-    };
-
-    self.setupTerminationHandlers = function(){
-        process.on('exit', function() { self.terminator(); });
-
-        ['SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
-         'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 'SIGUSR2', 'SIGTERM'
-        ].forEach(function(element, index, array) {
-            process.on(element, function() { self.terminator(element); });
-        });
-    };
-
-    self.createRoutes = function() {
-        self.routes = { };
-
-        self.routes['/main'] = function(req, res) {
-            res.setHeader('Content-Type', 'text/html');
-            res.send(self.cache_get('main.htm') );
-        };
-
-        self.routes['/'] = function(req, res) {
-            res.setHeader('Content-Type', 'text/html');
-            res.send(self.cache_get('index.html') );
-        };
-
-		self.routes['/php'] = function(req, res) {
-            res.setHeader('location', 'http://php-kkhchan.rhcloud.com');
-            res.send("<script>window.location.href='http://php-kkhchan.rhcloud.com';</script>");
-        };
-    };
-
-    self.initializeServer = function() {
-        self.createRoutes();
-        self.app = express.createServer();
-
-        for (var r in self.routes) {
-            self.app.get(r, self.routes[r]);
-        }
-    };
-
-    self.initialize = function() {
-        self.setupVariables();
-        self.populateCache();
-        self.setupTerminationHandlers();
-
-        self.initializeServer();
-    };
-
-    self.start = function() {
-        self.app.listen(self.port, self.ipaddress, function() {
-            console.log('%s: Node server started on %s:%d ...',
-                        Date(Date.now() ), self.ipaddress, self.port);
-        });
-    };
-
-};
-
-var zapp = new myApp();
-zapp.initialize();
-zapp.start();
-
+app.listen(8080, function () {
+    console.log('ready on port 8080');
+})
