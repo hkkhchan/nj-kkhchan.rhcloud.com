@@ -10,11 +10,11 @@ app.use('/css',express.static(path.join(__dirname + '/css')));
 app.get('/',function(req,res){
 	res.setHeader('Content-Type', 'text/html');
     if (req.query.a != null) {
-		res.send('hi, '+req.query.a)
+		res.send('Hi, '+req.query.a)
 	}
 	else
 	{
-		res.send('hi, ken');
+		res.send('Hi, Ken');
 	}
 });
 server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
