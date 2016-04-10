@@ -22,7 +22,7 @@ var myApp = function() {
             self.zcache = { 'index.html': '' };
         }
 
-        //self.zcache['index.html'] = fs.readFileSync('./index.html');
+        self.zcache['index.html'] = fs.readFileSync('./index.html');
     };
 
     self.cache_get = function(key) { return self.zcache[key]; };
