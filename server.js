@@ -9,7 +9,7 @@ app.use('/css',express.static(path.join(__dirname + '/css')));
 
 app.get('/',function(req,res){
 	res.setHeader('Content-Type', 'text/html');
-    if (req.query != null) {
+    if (req.query.a != null) {
 		res.send('hi, '+req.query.a)
 	}
 	else
