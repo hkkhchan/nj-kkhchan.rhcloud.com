@@ -1,11 +1,12 @@
 #!/bin/env node
-
+var path = require('path');
 var http = require('http');
 var express = require('express');
 var fs      = require('fs');
 var app = express();
 var server = http.createServer(app);
-app.use(express.static('css'));
+app.use('/css',express.static(path.join(__dirname, 'css'));
+
 app.get('/',function(req,res){
 	res.setHeader('Content-Type', 'text/html');
     res.send('index.html');
