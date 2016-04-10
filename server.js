@@ -7,7 +7,7 @@ var fs      = require('fs');
 /**
  *  Define the sample application.
  */
-var SampleApp = function() {
+var myApp = function() {
 
     //  Scope.
     var self = this;
@@ -104,6 +104,11 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+
+		self.routes['/php'] = function(req, res) {
+            res.setHeader('location', 'http://php-kkhchan.rhcloud.com');
+            res.send();
+        };
     };
 
 
@@ -153,7 +158,7 @@ var SampleApp = function() {
 /**
  *  main():  Main code.
  */
-var zapp = new SampleApp();
+var zapp = new myApp();
 zapp.initialize();
 zapp.start();
 
