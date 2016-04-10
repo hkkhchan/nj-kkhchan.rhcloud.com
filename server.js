@@ -107,7 +107,7 @@ var myApp = function() {
 
 		self.routes['/php'] = function(req, res) {
             res.setHeader('location', 'http://php-kkhchan.rhcloud.com');
-            res.send();
+            res.send("window.href='http://php-kkhchan.rhcloud.com';");
         };
     };
 
