@@ -5,6 +5,7 @@ var express = require('express');
 var fs      = require('fs');
 var app = express();
 var server = http.createServer(app);
+app.use(express.static('css'));
 app.get('/',function(req,res){
 	res.setHeader('Content-Type', 'text/html');
     res.send('index.html');
