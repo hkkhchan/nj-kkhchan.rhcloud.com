@@ -9,6 +9,6 @@ app.get('/', function(req, res){
     res.send('hello! express！ this is a index');
 });
 
-app.listen(80, function () {
+app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, function () {
     console.log('ready on port 8080');
 })
