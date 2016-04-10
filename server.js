@@ -7,7 +7,7 @@ var app = express();
 var server = http.createServer(app);
 app.get('/',function(req,res){
 	res.setHeader('Content-Type', 'text/html');
-    res.send(self.cache_get('index.html') );
+    res.send('index.html');
 });
 server.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP
 );
