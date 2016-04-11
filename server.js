@@ -6,11 +6,8 @@ var fs      = require('fs');
 var app = express();
 
 app.set('view engine', 'ejs');
-//app.set('port',process.env.OPENSHIFT_NODEJS_PORT);
-//app.set('ip',process.env.OPENSHIFT_NODEJS_IP||'127.0.0.1');
 app.use('/css',express.static(path.join(__dirname + '/css')));
-
-
+app.use('/js',express.static(path.join(__dirname + '/js')));
 
 app.get('/',function(req,res){
 	res.render('default',{
@@ -29,4 +26,4 @@ app.get('*',function(req,res) {
 });
 	
 var server = http.createServer(app);    
-server.listen(8080, process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
+server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
