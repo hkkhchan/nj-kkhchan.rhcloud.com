@@ -17,6 +17,7 @@ app.get('/',function(req,res){
 		title: 'New Title',
 		users: ['Ken', 'Chan']
 	});
+});
 
 app.get('/who/:name?', function(req,res) {
 	var name= req.params.name;
