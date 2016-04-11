@@ -18,6 +18,9 @@ body{
     border-radius: 5px 5px 5px 5px;
 }
 
+#login_div span, #login_div div {
+	position: relative;
+}
 .login_txt{
 	width: 80px;
 	height: 30px;
