@@ -4,8 +4,9 @@ var http = require('http');
 var express = require('express');
 var fs      = require('fs');
 var app = express();
-app.set('view engine', 'ejs');
 var server = http.createServer(app);
+app.set('view engine', 'ejs');
+
 app.use('/css',express.static(path.join(__dirname + '/css')));
 
 app.get('/',function(req,res){
