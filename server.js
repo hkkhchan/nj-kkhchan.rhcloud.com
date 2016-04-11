@@ -10,7 +10,7 @@ app.set('port',process.env.OPENSHIFT_NODEJS_PORT);
 app.set('ip',process.env.OPENSHIFT_NODEJS_IP);
 app.use('/css',express.static(path.join(__dirname + '/css')));
 
-var server = http.createServer(app);
+//var server = http.createServer(app);
 
 app.get('/',function(req,res){
 	res.render('default',{
@@ -28,4 +28,4 @@ app.get('*',function(req,res) {
 });
 	
     
-server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
+//server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
