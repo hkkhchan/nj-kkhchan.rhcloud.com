@@ -29,6 +29,11 @@ body{
 	width: 80px;
 	margin-right: 5px;
 }
+
+#clkText{
+	font-size: 160%;
+	line-height:3;
+}
 .myButton {
  text-decoration: none;
  height: 30px;
