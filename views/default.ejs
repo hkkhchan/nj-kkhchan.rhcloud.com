@@ -11,15 +11,23 @@
 </head>  
 <body>  
 <div id="login_div" class="row">
-  <div class="col-xs-9">
-	<div><input type="text" id="txt_login" class="login_txt"/></div>
-	<div><input type="password" id="txt_pw" class="login_txt"/></div>
+ <div class="col-xs-5">
+  <div class="row">
+	<div class="col-xs-6"><input type="text" id="txt_login" class="login_txt"/></div>
+	<div class="col-xs-6"><input type="password" id="txt_pw" class="login_txt"/></div>
   </div>
-  <div class="col-xs-3">
-	<div><button id="btn_login" class="myButton"></div>
-	<div><button id="btn_join" class="myButton"></div>
-	<div><button id="btn_forget" class="myButton"></div>
-  </div>	
+  <div class="row">
+	<div class="col-xs-4"><button id="btn_login" class="myButton"></div>
+	<div class="col-xs-4"><button id="btn_join" class="myButton"></div>
+	<div class="col-xs-4"><button id="btn_forget" class="myButton"></div>
+  </div>
+ </div>
+ <div class="col-xs-2">
+ 
+ </div>
+ <div class="col-xs-5">
+	<div id="timeBox">Tue Apr 12 2016 13:00</div>
+ </div>
 </div>  
 <section id="sec_main">
 <% for(var i=0; i<users.length; i++) {%>  
