@@ -20,6 +20,11 @@ body{
 	margin: 0 auto;
 }
 
+.login_div_1{
+	text-align:left;
+	width: 200px;
+	margin-right: 5px;
+}
 .login_txt{
 
 }
