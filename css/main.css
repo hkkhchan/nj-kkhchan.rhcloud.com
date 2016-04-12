@@ -15,8 +15,9 @@ body{
 	text-align:center;
     border-radius: 5px 5px 5px 5px;
 	border: 1px solid;
-	width: 30%;
-	height: 10%;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
 }
 
 .login_txt{
