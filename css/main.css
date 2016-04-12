@@ -23,15 +23,16 @@ body{
 .login_div_1{
 	text-align:left;
 	width: 200px;
-	margin-right: 5px;
+	
 }
 .login_txt{
-
+	width: 80px;
+	margin-right: 5px;
 }
 .myButton {
  text-decoration: none;
  height: 30px;
- width: 80px;
+ width: 50px;
  padding: 5px 5px 5px 5px;
  cursor: pointer;
  text-align: center;
