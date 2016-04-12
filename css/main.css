@@ -41,8 +41,3 @@ background-image: none;
 background-color:#ebf9ff;
 background-image: linear-gradient(#ebf9ff, #79abe8);
 }
-
-#main_sec{
-	position: absolute;
-	top: 30%;
-}
