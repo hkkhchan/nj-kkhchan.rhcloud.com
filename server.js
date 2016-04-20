@@ -22,8 +22,7 @@ app.get('/who/:name?', function(req,res) {
 });
 
 app.get('/403',function(req,res){
-	res.sendStatus(403);
-	res.send('403 test')
+	res.sendStatus(403).send('403 test');
 });
 app.get('/php',function(req,res){
 	res.location('http://php-kkhchan.rhcloud.com');
