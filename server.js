@@ -21,6 +21,9 @@ app.get('/who/:name?', function(req,res) {
 	res.send(name + 'is here.');
 });
 
+app.get('/403',function(req,res){
+	res.sendStatus(403);
+});
 app.get('/php',function(req,res){
 	res.location('http://php-kkhchan.rhcloud.com');
 });
