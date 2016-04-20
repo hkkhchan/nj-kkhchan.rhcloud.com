@@ -21,16 +21,13 @@ app.get('/who/:name?', function(req,res) {
 	res.send(name + 'is here.');
 });
 
+app.get('/php',function(req,res){
+	res.location('http://php-kkhchan.rhcloud.com');
+});
+
 app.get('*',function(req,res) {
 	res.send('nothing here');
 });
 
-app.get('/php',function(req,res){
-	//res.location('http://php-kkhchan.rhcloud.com');
-	res.links({
-		next: 'http://php-kkhchan.rhcloud.com',
-		last: 'http://wp-kkhchan.rhcloud.com'});
-});
-	
 var server = http.createServer(app);    
 server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
