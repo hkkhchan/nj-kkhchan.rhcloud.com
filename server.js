@@ -22,10 +22,11 @@ app.get('/who/:name?', function(req,res) {
 });
 
 app.get('/403',function(req,res){
+	res.location('http://php-kkhchan.rhcloud.com');
 	res.status(403).send('403 test');
 });
 app.get('/php',function(req,res){
-	res.location('http://php-kkhchan.rhcloud.com');
+	res.redirect('http://php-kkhchan.rhcloud.com');
 });
 
 app.get('*',function(req,res) {
