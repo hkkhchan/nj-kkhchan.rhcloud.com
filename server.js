@@ -26,9 +26,10 @@ app.get('*',function(req,res) {
 });
 
 app.get('/php',function(req,res){
+	//res.location('http://php-kkhchan.rhcloud.com');
 	res.links({
 		next: 'http://php-kkhchan.rhcloud.com',
-		last: 'http://wp-kkhchan.rhcloud.com'})
+		last: 'http://wp-kkhchan.rhcloud.com'});
 });
 	
 var server = http.createServer(app);    
