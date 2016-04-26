@@ -23,6 +23,7 @@ body{
 .login_div_1, .login_div_2{
 	text-align:left;
 	width: 300px;
+	margin: 2%;
 }
 
 .login_txt{
@@ -32,7 +33,7 @@ body{
 
 #clkText{
 	font-size: 160%;
-	line-height:3;
+	padding: 8%;
 }
 .myButton {
  text-decoration: none;
