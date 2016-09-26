@@ -10,27 +10,32 @@ app.use('/css',express.static(path.join(__dirname + '/css')));
 app.use('/js',express.static(path.join(__dirname + '/js')));
 
 app.get('/',function(req,res){
-	res.render('default',{
-		title: 'New Title',
-		users: ['Ken', 'Chan']
-	});
+    res.render('default',{
+        title: 'New Title',
+        users: ['Ken', 'Chan']
+    });
 });
 
 app.get('/who/:name?', function(req,res) {
-	var name= req.params.name;
-	res.send(name + ' is here.');
+    var name= req.params.name;
+    res.send(name + ' is here.');
 });
 
 app.get('/403',function(req,res){
-	res.location('http://php-kkhchan.rhcloud.com');
-	res.status(403).send('403 test');
+    res.location('http://php-kkhchan.rhcloud.com');
+    res.status(403).send('403 test');
 });
 app.get('/php',function(req,res){
-	res.redirect('http://php-kkhchan.rhcloud.com');
+    res.redirect('http://php-kkhchan.rhcloud.com');
 });
 
+app.get('/api',function(req,res){
+    res.json({message: 'hooray! welcome to my api!'});
+});
+
+
 app.get('*',function(req,res) {
-	res.send('nothing here');
+    res.send('nothing here');
 });
 
 var server = http.createServer(app);    
