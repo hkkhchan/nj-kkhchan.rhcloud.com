@@ -20,7 +20,14 @@ app.get('/',function(req,res){
 
 app.get('/who/:name?', function(req,res) {
     var name= req.params.name;
-    res.send(name + ' is here.');
+    User.findOne({'name'}:name},'_id password email',function(err,who){
+        if (err){
+            res.send(name + ' is not registered.');
+        }
+        else{
+            res.send(name + 's email is ' + who.email );
+        }
+    });
 });
 
 app.get('/403',function(req,res){
