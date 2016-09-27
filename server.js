@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use('/css',express.static(path.join(__dirname + '/css')));
 app.use('/js',express.static(path.join(__dirname + '/js')));
 
-var User = require('./models/users');
+var User = require('./models/db').users;
 
 app.get('/',function(req,res){
     res.render('default',{
@@ -20,7 +20,7 @@ app.get('/',function(req,res){
 
 app.get('/who/:name?', function(req,res) {
     var name= req.params.name;
-    User.users.findOne({'name':name},'_id password email',function(err,who){
+    User.findOne({'name':name},'_id password email',function(err,who){
         if (err){
             res.send(name + ' is not registered.');
         }
