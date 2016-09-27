@@ -10,7 +10,7 @@ app.use('/css',express.static(path.join(__dirname + '/css')));
 app.use('/js',express.static(path.join(__dirname + '/js')));
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mydb');
+//mongoose.connect('mongodb://localhost/mydb');
 //var User = require('./model/users');
 
 app.get('/',function(req,res){
