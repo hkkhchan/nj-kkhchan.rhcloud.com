@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.8.6.130/mydb');
+mongoose.connect('mongodb://ken:ken@127.8.6.130/mydb');
 
 var UserSchema = mongoose.Schema({
     name: String,
