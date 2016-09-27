@@ -11,7 +11,7 @@ app.use('/js',express.static(path.join(__dirname + '/js')));
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://127.8.6.130/mydb');
-var User = require('./model/users');
+var User = require('./models/users');
 
 app.get('/',function(req,res){
     res.render('default',{
