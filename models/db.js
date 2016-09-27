@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var options={
+    user:'ken',
+    pass:'ken'
 }
 mongoose.connect('mongodb://127.8.6.130/mydb',options);
 
