@@ -9,8 +9,7 @@ app.set('view engine', 'ejs');
 app.use('/css',express.static(path.join(__dirname + '/css')));
 app.use('/js',express.static(path.join(__dirname + '/js')));
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.8.6.130/mydb');
+
 var User = require('models/users');
 
 app.get('/',function(req,res){
