@@ -9,6 +9,10 @@ app.set('view engine', 'ejs');
 app.use('/css',express.static(path.join(__dirname + '/css')));
 app.use('/js',express.static(path.join(__dirname + '/js')));
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/mydb');
+var User = require('./model/users');
+
 app.get('/',function(req,res){
     res.render('default',{
         title: 'New Title',
