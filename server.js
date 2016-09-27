@@ -11,7 +11,7 @@ app.use('/js',express.static(path.join(__dirname + '/js')));
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/mydb');
-var User = require('./model/users');
+//var User = require('./model/users');
 
 app.get('/',function(req,res){
     res.render('default',{
@@ -42,5 +42,5 @@ app.get('*',function(req,res) {
     res.send('nothing here');
 });
 
-var server = http.createServer(app);    
+var server = http.createServer(app);
 server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
