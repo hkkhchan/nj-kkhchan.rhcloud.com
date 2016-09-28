@@ -4,7 +4,7 @@ conn+=process.env.OPENSHIFT_MONGODB_DB_USERNAME+':';
 conn+=process.env.OPENSHIFT_MONGODB_DB_PASSWORD+'@';
 conn+=process.env.OPENSHIFT_MONGODB_DB_HOST + ':';
 conn+=process.env.OPENSHIFT_MONGODB_DB_PORT + '/mydb';
-mongoose.connect(conn);
+mongoose.connect(conn,{config:{autoIndex: false}});
 
 var UserSchema = mongoose.Schema({
     name: String,

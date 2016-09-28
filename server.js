@@ -20,11 +20,6 @@ app.get('/',function(req,res){
 
 app.get('/who/:name?', function(req,res) {
     var name= req.params.name;
-    var conn=process.env.OPENSHIFT_MONGODB_DB_USERNAME+':';
-    conn+=process.env.OPENSHIFT_MONGODB_DB_PASSWORD+'@';
-    conn+=process.env.OPENSHIFT_MONGODB_DB_HOST + ':';
-    conn+=process.env.OPENSHIFT_MONGODB_DB_PORT + '/mydb';
-    res.send(conn)
     User.findOne({'name':name},'_id password email',function(err,who){
         if (err){
             res.send(err);
