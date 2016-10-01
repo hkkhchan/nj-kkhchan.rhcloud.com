@@ -20,11 +20,11 @@ app.get('/',function(req,res){
 
 app.get('/who/:name?', function(req,res) {
     var name= req.params.name;
-    User.findOne({'name':name},'_id name password email',function(err,who){
+    User.findOne({'name':name},'_id password email',function(err,who){
         if (err){
             res.send(err);
         }
-        else if (typeof who === 'undefined'){
+        else if (typeof(who.email) === 'undefined'){
             res.send('user not found');
         }
         else {
