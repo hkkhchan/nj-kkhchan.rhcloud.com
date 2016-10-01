@@ -22,7 +22,7 @@ app.get('/who/:name?', function(req,res) {
     var name= req.params.name;
     User.findOne({'name':name},'_id password email',function(err,who){
         if (err){
-            res.send(err);
+            res.send('user not found');
         }
         else{
             res.send(name + 's email is ' + who.email );
