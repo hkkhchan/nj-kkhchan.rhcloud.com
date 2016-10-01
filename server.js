@@ -9,6 +9,13 @@ app.set('view engine', 'ejs');
 app.use('/css',express.static(path.join(__dirname + '/css')));
 app.use('/js',express.static(path.join(__dirname + '/js')));
 
+fs.readdirSync('./controllers').forEach(function (file) {
+  if(file.substr(-3) == '.js') {
+      route = require('./controllers/' + file);
+      route.controller(app);
+  }
+});
+/*
 var User = require('./models/db').users;
 
 app.get('/',function(req,res){
@@ -37,6 +44,7 @@ app.get('/403',function(req,res){
     res.location('http://php-kkhchan.rhcloud.com');
     res.status(403).send('403 test');
 });
+
 app.get('/php',function(req,res){
     res.redirect('http://php-kkhchan.rhcloud.com');
 });
@@ -49,6 +57,6 @@ app.get('/api',function(req,res){
 app.get('*',function(req,res) {
     res.send('nothing here');
 });
-
+*/
 var server = http.createServer(app);
 server.listen(8080, process.env.OPENSHIFT_NODEJS_IP);
