@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-var User = require('./models/db').users;
+var User = require('../models/db').users;
 module.exports.controller = function(app) {
     app.get('/',function(req,res){
         res.render('default',{
