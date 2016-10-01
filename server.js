@@ -20,20 +20,15 @@ app.get('/',function(req,res){
 
 app.get('/who/:name?', function(req,res) {
     var name= req.params.name;
-    try{
-        User.findOne({'name':name},'_id password email',function(err,who){
-            if (err){
-                res.send(err);
-            }
-            else {
-                //res.send(name + '\'s email is ' + who.email );
-                res.send('ok');
-            }
-        });
-    }
-    catch(err){
-        res.send('user not found');
-    }
+    User.findOne({'name':name},'_id password email',function(err,who){
+        if (err){
+            res.send(err);
+        }
+        else {
+            //res.send(name + '\'s email is ' + who.email );
+            res.send(who);
+        }
+    });
 });
 
 app.get('/403',function(req,res){
