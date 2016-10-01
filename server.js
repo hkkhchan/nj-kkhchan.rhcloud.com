@@ -24,7 +24,7 @@ app.get('/who/:name?', function(req,res) {
         if (err){
             res.send(err);
         }
-        else if (who.name!=name){
+        else if (typeof who === 'undefined'){
             res.send('user not found');
         }
         else {
