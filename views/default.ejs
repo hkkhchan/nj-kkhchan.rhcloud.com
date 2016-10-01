@@ -13,17 +13,17 @@
 <div id="login_div" class="box">
  <div class="col-xs-6">
   <div class="login_div_1">
-	<input type="text" id="txt_login" class="login_txt"/>
-	<input type="password" id="txt_pw" class="login_txt"/>
+    <input type="text" id="txt_login" class="login_txt"/>
+    <input type="password" id="txt_pw" class="login_txt"/>
   </div>
   <div class="login_div_2">
-	<button id="btn_login" class="myButton">Login</button>
-	<button id="btn_join" class="myButton">Join</button>
-	<button id="btn_forget" class="myButton">Forget</button>
+    <button id="btn_login" class="myButton">Login</button>
+    <button id="btn_join" class="myButton">Join</button>
+    <button id="btn_forget" class="myButton">Forget</button>
   </div>
  </div>
  <div class="col-xs-6">
-	<div id="clkText">Tue Apr 12 2016 13:00</div>
+    <div id="clkText">Tue Apr 12 2016 13:00</div>
  </div>
 </div>  
 <!--
@@ -34,20 +34,20 @@
 </section>
 -->
 <script>
-	function clk() {
-				wk='<wk>';
-				var a=new Date();   
-				document.getElementById("clkText").innerHTML=wk+a.toDateString().replace(' ','</wk> ')+" "+addZero(a.getHours()) + ":" + addZero(a.getMinutes());
-			}
-	function addZero(i) {
-			if (i < 10) {
-				i = "0" + i;
-				}
-			return i;
-		}
+    function clk() {
+                wk='<wk>';
+                var a=new Date();   
+                document.getElementById("clkText").innerHTML=wk+a.toDateString().replace(' ','</wk> ')+" "+addZero(a.getHours()) + ":" + addZero(a.getMinutes());
+            }
+    function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+                }
+            return i;
+        }
 
-	clk();
-	setInterval(clk, 1000);
+    clk();
+    setInterval(clk, 1000);
 
 </script>
 </body>  
