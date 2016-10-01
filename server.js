@@ -24,9 +24,11 @@ app.get('/who/:name?', function(req,res) {
         if (err){
             res.send(err);
         }
+        else if (who==null){
+            res.send('User no found');
+        }
         else {
-            //res.send(name + '\'s email is ' + who.email );
-            res.send(who==null);
+            res.send(name + '\'s email is ' + who.email );
         }
     });
 });
