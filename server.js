@@ -26,7 +26,7 @@ app.get('/who/:name?', function(req,res) {
         }
         else {
             //res.send(name + '\'s email is ' + who.email );
-            res.send(who=={});
+            res.send(typeof(who.email));
         }
     });
 });
