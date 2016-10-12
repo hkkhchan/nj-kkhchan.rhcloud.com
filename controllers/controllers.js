@@ -22,11 +22,25 @@ module.exports.controller = function(app) {
             }
         });
     });
+    
+    app.post('/signup', function(req,res){
+        var user = new User();
+        user.name = req.body.name;
+        user.password = req.body.password;
+        user.email=req.body.email;
+        user.save(function(err){
+            if (err){
+                res.send(err);
+            }
+        res.json({message: 'User created!'});
+        });
+    });
 
     app.get('/403',function(req,res){
         res.location('http://php-kkhchan.rhcloud.com');
         res.status(403).send('403 test');
     });
+    
 
     app.get('/php',function(req,res){
         res.redirect('http://php-kkhchan.rhcloud.com');
